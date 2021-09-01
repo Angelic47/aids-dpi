@@ -51,8 +51,8 @@ int aids_connlist_timer_init(void)
 int aids_connlist_timer_init(void)
 {
 	timer_setup(&aids_connlist_timer,aids_connlist_timer_func,0);
-	//aids_connlist_timer.expires = AIDS_CONNLIST_TIMEOUT_CHECK;
-	//add_timer(&aids_connlist_timer);
+	aids_connlist_timer.expires = AIDS_CONNLIST_TIMEOUT_CHECK;
+	add_timer(&aids_connlist_timer);
 	return 0;
 }
 #endif
