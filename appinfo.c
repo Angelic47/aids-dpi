@@ -398,10 +398,10 @@ struct aids_seg_tree_node* aids_create_seg_tree(u16 min, u16 max)
 	if (max - min != 1)
 	{
 		u16 mid;
-		u16 offset = 1;
-		while (min + offset < max)
+		u32 offset = 1;
+		while (offset + min < max)
 			offset = offset << 1;
-		mid = min + offset / 2;
+		mid = min + offset >> 1;
 		left = aids_create_seg_tree(min, mid);
 		right = aids_create_seg_tree(mid, max);
 		head->mid_num = mid;
